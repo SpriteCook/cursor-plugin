@@ -1,51 +1,45 @@
-# SpriteCook Cursor Plugin Repo
+# SpriteCook Cursor Plugin
 
-SpriteCook is an AI game art platform for generating production-ready assets from prompts, including pixel art and detailed/HD styles.
+SpriteCook brings game art generation into Cursor with a hosted MCP server and bundled skills for sprite generation, animation workflows, and asset handling.
 
-This repository is the Cursor Marketplace plugin source for SpriteCook. It packages:
+## What's Included
 
-- SpriteCook MCP server configuration
-- SpriteCook skill instructions for autonomous game-art workflows
-- A local install helper for testing in Cursor before marketplace publication
+- `mcp.json`: SpriteCook Cursor MCP configuration
+- `skills/`: bundled SpriteCook workflow skills
+- `commands/`: quick command for connecting SpriteCook in Cursor
+- `.cursor-plugin/plugin.json`: Cursor plugin manifest
 
-Current plugin in this repo:
+## Local Testing
 
-- `plugins/spritecook-gen`
+Copy or symlink this repository into Cursor's local plugin folder as:
 
-## What This Repo Is For
+```text
+~/.cursor/plugins/local/spritecook
+```
 
-- Publish and maintain SpriteCook plugin(s) for Cursor Marketplace
-- Keep MCP configuration and skill content versioned together
-- Provide a clean reviewable source for marketplace submission
+Then:
 
-## Repository Structure
+1. Fully quit Cursor.
+2. Reopen Cursor.
+3. Open `Settings -> Tools & MCP`.
+4. Connect `spritecook` through the OAuth flow.
 
-- `.cursor-plugin/marketplace.json`: marketplace-level manifest
-- `plugins/spritecook-gen/.cursor-plugin/plugin.json`: plugin manifest
-- `plugins/spritecook-gen/mcp.json`: SpriteCook Cursor MCP server config
-- `plugins/spritecook-gen/skills/`: bundled SpriteCook skills
-
-## Local Validation
+## Validation
 
 Run:
 
 ```powershell
-node scripts\validate-template.mjs
+node scripts\validate-plugin.mjs
 ```
 
-## Local Testing In Cursor
+## Install Script
 
-Use Cursor's local plugin folder:
+Hosted installers can place this plugin directly into Cursor's local plugin folder:
 
-1. Copy or symlink `plugins/spritecook-gen` to `~/.cursor/plugins/local/spritecook-gen`.
-2. Fully quit Cursor.
-3. Reopen Cursor.
-4. Open Settings -> Tools & MCP and confirm `spritecook` is present.
-5. Complete the SpriteCook OAuth flow when Cursor prompts for sign-in.
-6. Test with `Check my SpriteCook credit balance`.
+```powershell
+iwr -useb https://spritecook.ai/install-cursor.ps1 | iex
+```
 
-## Cursor Marketplace Submission
-
-Submit this repository through:
-
-- https://cursor.com/marketplace/publish
+```bash
+curl -fsSL https://spritecook.ai/install-cursor.sh | bash
+```
