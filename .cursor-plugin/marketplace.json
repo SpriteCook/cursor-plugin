@@ -5,7 +5,7 @@
     "email": "support@spritecook.ai"
   },
   "metadata": {
-    "description": "Generate game-ready art assets with SpriteCook MCP and skill guidance.",
+    "description": "Generate game art, sprites, and short animations in Cursor with SpriteCook.",
     "version": "0.1.0",
     "pluginRoot": "plugins"
   },
