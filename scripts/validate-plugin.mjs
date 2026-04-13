@@ -147,9 +147,15 @@ async function main() {
   }
 
   if (manifest.logo) {
-    const logoPath = path.join(repoRoot, manifest.logo);
-    if (!(await pathExists(logoPath))) {
-      addError(`Manifest logo path is missing: ${manifest.logo}`);
+    const logo = manifest.logo;
+    const isRemote =
+      typeof logo === "string" &&
+      (logo.startsWith("https://") || logo.startsWith("http://"));
+    if (!isRemote) {
+      const logoPath = path.join(repoRoot, logo);
+      if (!(await pathExists(logoPath))) {
+        addError(`Manifest logo path is missing: ${logo}`);
+      }
     }
   }
 

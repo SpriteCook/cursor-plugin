@@ -14,6 +14,7 @@ Use this alongside the SpriteCook image or animation skill whenever SpriteCook M
 1. Check credits first with `get_credit_balance` before starting a batch or multi-asset workflow.
 2. Prefer presigned download URLs over authenticated asset endpoints.
 3. Save important `asset_id` values in a local manifest whenever there is a writable workspace, unless the user explicitly wants a throwaway result.
+4. When a workflow involves follow-up generations or animations for the same subject, identify and reuse the canonical `asset_id` instead of generating from scratch again.
 
 ## Credential Safety
 

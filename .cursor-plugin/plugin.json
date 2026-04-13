@@ -1,5 +1,6 @@
 {
   "name": "spritecook",
+  "displayName": "SpriteCook",
   "version": "0.2.0",
   "description": "Generate game art, sprites, and short animations in Cursor with SpriteCook.",
   "author": {
@@ -18,5 +19,5 @@
     "mcp",
     "animation"
   ],
-  "logo": "assets/spritecook_logo_square_512.png"
+  "logo": "assets/logo.svg"
 }

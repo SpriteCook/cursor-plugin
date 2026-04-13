@@ -1,7 +1,8 @@
 {
-  "spritecook": {
-    "type": "http",
-    "url": "https://api.spritecook.ai/mcp/cursor",
-    "note": "SpriteCook's hosted MCP server for Cursor. Cursor should use the native OAuth connection flow exposed by this endpoint. For local bootstrap or non-OAuth editors, use `npx spritecook-mcp setup`."
+  "mcpServers": {
+    "spritecook": {
+      "type": "http",
+      "url": "https://api.spritecook.ai/mcp/cursor"
+    }
   }
 }
