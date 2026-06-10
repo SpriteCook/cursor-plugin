@@ -1,14 +1,14 @@
 {
   "name": "spritecook",
   "displayName": "SpriteCook",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Generate game art, sprites, and short animations in Cursor with SpriteCook.",
   "author": {
     "name": "SpriteCook",
     "email": "support@spritecook.ai"
   },
   "homepage": "https://www.spritecook.ai",
-  "repository": "https://github.com/SpriteCook/plugin",
+  "repository": "https://github.com/SpriteCook/cursor-plugin",
   "license": "MIT",
   "keywords": [
     "spritecook",
