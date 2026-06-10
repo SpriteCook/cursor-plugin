@@ -5,7 +5,7 @@ SpriteCook brings game art generation into Cursor with a hosted MCP server and b
 ## What's Included
 
 - `mcp.json`: SpriteCook Cursor MCP configuration
-- `skills/`: bundled SpriteCook workflow skills
+- `skills/`: bundled SpriteCook workflow skills, including Godot export guidance
 - `commands/`: quick command for connecting SpriteCook in Cursor
 - `.cursor-plugin/plugin.json`: Cursor plugin manifest
 
