@@ -1,7 +1,7 @@
 {
   "name": "spritecook",
   "displayName": "SpriteCook",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Generate game art, cohesive UI kits, sprites, and short animations in Cursor with SpriteCook.",
   "author": {
     "name": "SpriteCook",
