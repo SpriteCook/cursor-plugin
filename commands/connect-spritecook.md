@@ -1,6 +1,6 @@
 ---
 name: connect-spritecook
-description: Guide the user through connecting SpriteCook MCP in Cursor and verify the setup.
+description: Guide the user through connecting SpriteCook in Cursor and verify the connection.
 ---
 
 # Connect SpriteCook
@@ -9,21 +9,20 @@ Use this command when the user installed the plugin but has not connected their 
 
 ## Steps
 
-1. Explain SpriteCook MCP requires account authentication before generation works.
-2. Offer two setup paths:
-   - Cursor OAuth flow (recommended):
-     - Open Cursor Settings -> Tools & MCP
-     - Enable `spritecook`
-     - Complete the SpriteCook OAuth browser flow when prompted
-   - Local bootstrap fallback:
-     - `npx spritecook-mcp setup`
-3. After setup, ask user to reload Cursor.
-4. Verify connection by calling `get_credit_balance`.
-5. If verification passes, suggest a first generation test prompt.
+1. Explain that SpriteCook needs a connected account before generation works.
+2. Walk the user through Cursor's built-in sign-in:
+   - Open Cursor Settings, then Tools & MCP.
+   - Enable `spritecook`.
+   - Complete the SpriteCook sign-in in the browser when prompted.
+3. If the server doesn't appear, ask the user to fully quit and reopen Cursor.
+4. Verify the connection by calling `get_credit_balance`.
+5. If it works, suggest a first test prompt, such as "Generate a tiny pixel art knight, idle pose."
 
 ## If It Fails
 
-- `401/403`: auth session is missing or expired; reconnect SpriteCook from Cursor MCP settings.
-- MCP unavailable: ensure the plugin is installed and `spritecook` is enabled in Cursor MCP settings.
-- No tools visible: check plugin is enabled and the `spritecook` server is active.
-- OAuth issues in Cursor: try `npx spritecook-mcp setup` as a fallback local bootstrap.
+- `401` or `403`: the sign-in is missing or expired. Reconnect `spritecook` from Tools & MCP.
+- Server missing: check that the plugin is installed and enabled, and that `spritecook` is turned on in Tools & MCP.
+- No tools visible: check that the `spritecook` server is active.
+- Sign-in keeps failing: point the user to https://spritecook.ai/cursor for setup help.
+
+Do not run setup scripts, install packages, edit MCP configuration files, or ask for an API key. The plugin already provides the SpriteCook server.

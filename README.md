@@ -1,40 +1,40 @@
-# SpriteCook Cursor Plugin
+# SpriteCook for Cursor
 
-SpriteCook brings game art generation into Cursor with a hosted MCP server and bundled skills for concept-first UI kits, sprite generation, local-file uploads, presets, animation workflows, and asset handling.
+SpriteCook generates game art from Cursor: sprites, characters, tilesets, UI kits, and short animations, in pixel art or detailed HD styles. This plugin adds the hosted SpriteCook MCP server plus workflow skills that show the agent how to keep a set of assets consistent and ready for your engine.
 
 ## What's Included
 
-- `mcp.json`: SpriteCook Cursor MCP configuration
-- `skills/`: bundled SpriteCook workflow skills, including UI kits, uploads, presets, and Godot export guidance
-- `commands/`: quick command for connecting SpriteCook in Cursor
-- `.cursor-plugin/plugin.json`: Cursor plugin manifest
+- `mcp.json`: the hosted SpriteCook MCP server (`https://mcp.spritecook.ai/mcp/cursor`), which you sign in to with your SpriteCook account
+- `skills/`: workflow skills for sprites, tilesets, UI kits, animation, uploads, presets, edge cleanup, and Godot export
+- `commands/connect-spritecook.md`: walks you through connecting your account
+- `.cursor-plugin/plugin.json`: the plugin manifest
 
-## Local Testing
+## Connect Your Account
 
-Copy or symlink this repository into Cursor's local plugin folder as:
+1. Open Cursor Settings, then Tools & MCP.
+2. Enable `spritecook`.
+3. Sign in to SpriteCook in the browser window that opens.
 
-```text
-~/.cursor/plugins/local/spritecook
-```
+You need a SpriteCook account. Every account gets free credits each month, and paid plans add more. If the server doesn't show up, fully quit and reopen Cursor. More help is at [spritecook.ai/cursor](https://spritecook.ai/cursor).
 
-Then:
+## Try It
 
-1. Fully quit Cursor.
-2. Reopen Cursor.
-3. Open `Settings -> Tools & MCP`.
-4. Connect `spritecook` through the OAuth flow.
+Ask the agent:
 
-## Validation
+- "Generate a tiny pixel art knight, idle pose."
+- "Build a top-down grass tileset."
+- "Design a UI kit for a fantasy inventory screen."
+- "Animate this sprite into a short idle loop."
 
-Run:
+Results are saved to your SpriteCook library, so you can download or reuse them later.
 
-```powershell
-node scripts\validate-plugin.mjs
-```
+## Privacy and Terms
+
+SpriteCook uses your prompts, and any images you choose to upload, to generate your assets. Read the [privacy policy](https://spritecook.ai/privacy) and [terms of service](https://spritecook.ai/terms).
 
 ## Install Script
 
-Hosted installers can place this plugin directly into Cursor's local plugin folder:
+The hosted installers place this plugin in Cursor's local plugin folder:
 
 ```powershell
 iwr -useb https://spritecook.ai/install-cursor.ps1 | iex
@@ -44,8 +44,28 @@ iwr -useb https://spritecook.ai/install-cursor.ps1 | iex
 curl -fsSL https://spritecook.ai/install-cursor.sh | bash
 ```
 
-## Skill source of truth
+## Local Testing
+
+Copy or symlink this repository into Cursor's local plugin folder as:
+
+```text
+~/.cursor/plugins/local/spritecook
+```
+
+Then fully quit and reopen Cursor, open Settings, then Tools & MCP, and connect `spritecook`.
+
+## Validation
+
+```powershell
+node scripts\validate-plugin.mjs
+```
+
+## Skill Source of Truth
 
 Bundled workflow skills come from [SpriteCook/skills](https://github.com/SpriteCook/skills). Update that repository first, then sync its committed skills into `skills/`. [skills-source.json](skills-source.json) records the exact bundled source revision.
 
-This release adds a skills version stamp. Agents compare it with the latest version that `get_credit_balance` reports and tell you when a newer SpriteCook plugin is available. Servers without `latest_skills_version` skip the check. No new plugin environment variables or database migrations are required.
+Bundled skills limit uploads and recovery to the requested SpriteCook task. Version checks run when you ask about updates or compatibility. No new plugin environment variables or database migrations are required.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
