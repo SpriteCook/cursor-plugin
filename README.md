@@ -64,7 +64,7 @@ node scripts\validate-plugin.mjs
 
 Bundled workflow skills come from [SpriteCook/skills](https://github.com/SpriteCook/skills). Update that repository first, then sync its committed skills into `skills/`. [skills-source.json](skills-source.json) records the exact bundled source revision.
 
-Bundled skills limit uploads and recovery to the requested SpriteCook task. Version checks run when you ask about updates or compatibility. No new plugin environment variables or database migrations are required.
+Bundled skills recommend Gemini image models for pixel art and limit uploads and recovery to the requested SpriteCook task. Version checks run when you ask about updates or compatibility. No new plugin environment variables or database migrations are required.
 
 ## License
 
